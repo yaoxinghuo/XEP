@@ -49,7 +49,8 @@ typedef enum CopyDirection {
         NSMenuItem	*mi		= [[NSMenuItem alloc] initWithTitle:@"XEP" action:nil keyEquivalent:@""];
         mi.submenu = [self createXEPMenu];
         NSInteger count = [[[editItem submenu]itemArray]count];
-        [[editItem submenu] insertItem:mi atIndex:count];
+        [[editItem submenu]insertItem:[NSMenuItem separatorItem] atIndex:count];
+        [[editItem submenu] insertItem:mi atIndex:count+1];
         [mi release];
     }
 }
