@@ -57,14 +57,14 @@ typedef enum CopyDirection {
 	item.target = self;
 	[xep addItem:item];
 	[item release];
-	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Comment" action:@selector(createComment:) keyEquivalent:@"J"];
-	[item setKeyEquivalentModifierMask:(NSShiftKeyMask | NSControlKeyMask)];
+	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Comment" action:@selector(createComment:) keyEquivalent:@"j"];
+	[item setKeyEquivalentModifierMask:(NSCommandKeyMask | NSAlternateKeyMask)];
 	item.target = self;
 	[xep addItem:item];
 	[item release];
 
-	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"All Comment" action:@selector(createAllComment:) keyEquivalent:@"J"];
-	[item setKeyEquivalentModifierMask:(NSControlKeyMask | NSShiftKeyMask | NSCommandKeyMask)];
+	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"All Comment" action:@selector(createAllComment:) keyEquivalent:@"j"];
+	[item setKeyEquivalentModifierMask:(NSAlternateKeyMask | NSShiftKeyMask | NSCommandKeyMask)];
 	item.target = self;
 	[xep addItem:item];
 	[item release];
