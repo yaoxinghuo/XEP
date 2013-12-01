@@ -53,7 +53,7 @@ typedef enum CopyDirection {
 	NSMenuItem	*item;
 
 	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Format" action:@selector(formatCode:) keyEquivalent:@"F"];
-	[item setKeyEquivalentModifierMask:(NSShiftKeyMask | NSControlKeyMask)];
+	[item setKeyEquivalentModifierMask:(NSShiftKeyMask | NSCommandKeyMask)];
 	item.target = self;
 	[xep addItem:item];
 	[item release];
@@ -71,17 +71,17 @@ typedef enum CopyDirection {
 	UniChar a;
 	a		= 63232;
 	item	= [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Copy line up" action:@selector(copyLineUp:) keyEquivalent:[NSString stringWithCharacters:&a length:1]];
-	[item setKeyEquivalentModifierMask:(NSControlKeyMask | NSAlternateKeyMask)];
+	[item setKeyEquivalentModifierMask:(NSCommandKeyMask | NSAlternateKeyMask)];
 	item.target = self;
 	[xep addItem:item];
 	[item release];
 	a		= 63233;
 	item	= [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Copy line down" action:@selector(copyLineDown:) keyEquivalent:[NSString stringWithCharacters:&a length:1]];
-	[item setKeyEquivalentModifierMask:(NSControlKeyMask | NSAlternateKeyMask)];
+	[item setKeyEquivalentModifierMask:(NSCommandKeyMask | NSAlternateKeyMask)];
 	item.target = self;
 	[xep addItem:item];
 	[item release];
-	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Delete line" action:@selector(deleteLine:) keyEquivalent:@"-"];
+	item = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:@"Delete line" action:@selector(deleteLine:) keyEquivalent:@"d"];
 	[item setKeyEquivalentModifierMask:(NSCommandKeyMask)];
 	item.target = self;
 	[xep addItem:item];
