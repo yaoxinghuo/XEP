@@ -36,13 +36,22 @@ typedef enum CopyDirection {
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     NSLog(@"%@ applicationDidFinishLaunching...", self);
-	NSMenu		*menu	= [NSApp mainMenu];
-	NSArray		*items	= [menu itemArray];
-	NSMenuItem	*mi		= [[NSMenuItem alloc] initWithTitle:@"XEP" action:nil keyEquivalent:@""];
-
-	mi.submenu = [self createXEPMenu];
-	[menu insertItem:mi atIndex:[items count] - 1];
-	[mi release];
+//	NSMenu		*menu	= [NSApp mainMenu];
+//	NSArray		*items	= [menu itemArray];
+//	NSMenuItem	*mi		= [[NSMenuItem alloc] initWithTitle:@"XEP" action:nil keyEquivalent:@""];
+//
+//	mi.submenu = [self createXEPMenu];
+//	[menu insertItem:mi atIndex:[items count] - 1];
+//	[mi release];
+    NSMenu		*menu	= [NSApp mainMenu];
+    NSMenuItem  *editItem = [menu itemWithTitle:@"Edit"];
+    if (editItem!=nil) {
+        NSMenuItem	*mi		= [[NSMenuItem alloc] initWithTitle:@"XEP" action:nil keyEquivalent:@""];
+        mi.submenu = [self createXEPMenu];
+        NSInteger count = [[[editItem submenu]itemArray]count];
+        [[editItem submenu] insertItem:mi atIndex:count];
+        [mi release];
+    }
 }
 
 #pragma mark - Create Menu.
