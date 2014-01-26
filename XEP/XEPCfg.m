@@ -15,9 +15,9 @@
 {
 	self = [self init];
 
-	if (self) {
+	if (self){
 		if (filePath == nil) {
-			NSELog(@"the configure file path is null:%@", filePath);
+			//NSELog(@"the configure file path is null:%@", filePath);
 			return self;
 		}
 
@@ -25,12 +25,12 @@
 		fexist = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
 
 		if (isDirectory) {
-			NSELog(@"the configure file is directory:%@", filePath);
+			//NSELog(@"the configure file is directory:%@", filePath);
 			return self;
 		}
 
 		if (!fexist) {
-			NSELog(@"the configure file is not exist:%@", filePath);
+			//NSELog(@"the configure file is not exist:%@", filePath);
 			return self;
 		}
 
@@ -38,7 +38,7 @@
 		NSString	*data	= [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
 
 		if (error) {
-			NSELog(@"read configure error:%@", error);
+			//NSELog(@"read configure error:%@", error);
 			return self;
 		}
 

@@ -33,7 +33,8 @@ static NSMutableArray	*gProejcts			= nil;
 		if (cls) {
 			[gRegisteredClasses addObject:cls];
 		}
-		NSLog(@"register class:%@", [cls description]);
+        //by Terry remove log
+		//NSLog(@"register class:%@", [cls description]);
 	}
 }
 
@@ -91,14 +92,16 @@ static NSMutableArray	*gProejcts			= nil;
 			name		:NSApplicationDidFinishLaunchingNotification
 			object		:NSApp];
 #endif
-	NSILog(@"have %ld plugin class been loaded", [gRegisteredClasses count]);
+    //by Terry remove log
+	//NSILog(@"have %ld plugin class been loaded", [gRegisteredClasses count]);
 	IF_REL(gRegisteredClasses);
 }
 
 + (void)listen:(NSNotification *)notice
 {
 	//    if([notice.name rangeOfString:@"IDESourceCodeDocumentDidUpdateSourceModelNotification"].length>0)
-	NSDLog(@"%@,%@", notice.name, [notice.object debugDescription]);
+    //by Terry remove log
+	//NSDLog(@"%@,%@", notice.name, [notice.object debugDescription]);
 }
 
 //
@@ -107,15 +110,17 @@ static NSMutableArray	*gProejcts			= nil;
 {
 	[NSFLog initFLog:[[bundle bundlePath] stringByAppendingString:@"/Contents/XEP_E.log"]];
 	[NSFLog sharedFLog].console = YES;
-	[NSFLog sharedFLog].level	= LOG_DEBUG;
-	NSILog(@"file log initialed%@", @"");
+	[NSFLog sharedFLog].level	= LOG_ERROR;
+    //by Terry remove log
+	//NSILog(@"file log initialed%@", @"");
 	[XEPPreferences initConfig:bundle];
 	gProejcts = [[NSMutableArray alloc] init];
 }
 
 + (void)releaseConfig
 {
-	NSILog(@"file log closed%@", @"");
+    //by Terry remove log
+	//NSILog(@"file log closed%@", @"");
 	[XEPPreferences releaseConfig];
 	[NSFLog relFLog];
 	IF_REL(gEditingFile);
@@ -131,7 +136,8 @@ static NSMutableArray	*gProejcts			= nil;
 	@synchronized(gProejcts) {
 		[gProejcts addObject:notice.object];
 	}
-	NSLog(@"one project have loaded:%@", [notice.object path]);
+    //by Terry remove log
+	//NSLog(@"one project have loaded:%@", [notice.object path]);
 }
 
 + (id)loadedProjects; {
@@ -158,7 +164,8 @@ static NSMutableArray	*gProejcts			= nil;
 	}
 
 	if (prj == nil) {
-		NSDLog(@"can't find the owner project for file:%@", filePath);
+        //by Terry remove log
+		//NSDLog(@"can't find the owner project for file:%@", filePath);
 	}
 
 	return prj;
