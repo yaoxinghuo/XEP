@@ -10,29 +10,29 @@
 	<string>XEP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CCE8DF14-DA61-4F88-8CCD-71108C4836A3</key>
+		<key>247A04FF39C9F45B257747DD3645873709555C52</key>
 		<string>ssh://github.com/yaoxinghuo/XEP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>XEP.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CCE8DF14-DA61-4F88-8CCD-71108C4836A3</key>
+		<key>247A04FF39C9F45B257747DD3645873709555C52</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/yaoxinghuo/XEP.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CCE8DF14-DA61-4F88-8CCD-71108C4836A3</string>
+	<string>247A04FF39C9F45B257747DD3645873709555C52</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CCE8DF14-DA61-4F88-8CCD-71108C4836A3</string>
+			<string>247A04FF39C9F45B257747DD3645873709555C52</string>
 			<key>IDESourceControlWCCName</key>
 			<string>XEP</string>
 		</dict>
