@@ -447,9 +447,9 @@
 				INFOPLIST_FILE = "XEP/XEP-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = /Developer;
-				LIBRARY_SEARCH_PATHS = /Volumes/IT/workspace_ios/XEP/liblua/lib;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/liblua/lib";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = /Volumes/IT/workspace_ios/XEP/liblua/lib/liblua.a;
+				OTHER_LDFLAGS = "$(PROJECT_DIR)/liblua/lib/liblua.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -488,10 +488,10 @@
 				INFOPLIST_FILE = "XEP/XEP-Info.plist";
 				INSTALL_PATH = Build/;
 				LD_RUNPATH_SEARCH_PATHS = /Developer;
-				LIBRARY_SEARCH_PATHS = /Volumes/IT/workspace_ios/XEP/liblua/lib;
-				"LIBRARY_SEARCH_PATHS[arch=*]" = /Volumes/IT/workspace_ios/XEP/liblua/lib;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/liblua/lib";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/liblua/lib";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = /Volumes/IT/workspace_ios/XEP/liblua/lib/liblua.a;
+				OTHER_LDFLAGS = "$(PROJECT_DIR)/liblua/lib/liblua.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
