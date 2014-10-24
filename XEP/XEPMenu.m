@@ -111,9 +111,9 @@ typedef enum CopyDirection {
 	NSResponder *responder		= [nsKeyWindow firstResponder];
 	NSString	*resname		= [[responder class] description];
     
-	if (![resname isEqualToString:@"DVTSourceTextView"]) {
-		return;
-	}
+    if (![self isResnameSourceTextView:resname]) {
+        return;
+    }
     
 	NSTextView		*tv		= (NSTextView *)responder;
 	NSRange			range	= tv.selectedRange;
@@ -143,9 +143,9 @@ typedef enum CopyDirection {
 	NSResponder *responder		= [nsKeyWindow firstResponder];
 	NSString	*resname		= [[responder class] description];
     
-	if (![resname isEqualToString:@"DVTSourceTextView"]) {
-		return;
-	}
+    if (![self isResnameSourceTextView:resname]) {
+        return;
+    }
     
 	NSTextView		*tv		= (NSTextView *)responder;
 	NSRange			range	= tv.selectedRange;
@@ -222,9 +222,9 @@ typedef enum CopyDirection {
 			NSResponder *responder		= [nsKeyWindow firstResponder];
 			NSString	*resname		= [[responder class] description];
             
-			if (![resname isEqualToString:@"DVTSourceTextView"]) {
-				return;
-			}
+            if (![self isResnameSourceTextView:resname]) {
+                return;
+            }
             
 			NSTextView		*tv		= (NSTextView *)responder;
 			NSLineString	*ls		= [NSLineString lineStringWith:[[tv textStorage] string]];
@@ -299,9 +299,9 @@ typedef enum CopyDirection {
 			NSResponder *responder		= [nsKeyWindow firstResponder];
 			NSString	*resname		= [[responder class] description];
             
-			if (![resname isEqualToString:@"DVTSourceTextView"]) {
-				return;
-			}
+            if (![self isResnameSourceTextView:resname]) {
+                return;
+            }
             
 			NSTextView *tv = (NSTextView *)responder;
 			//            NSLog(@"tv:%@",[[XEPPluginMgr ownerProjectHome:[XEPXcode filePathForSourceTextView:tv]] debugDescription]);
@@ -601,9 +601,9 @@ typedef enum CopyDirection {
             
 			//            NSDLog(@"forame responder name:%@",resname);
             //            NSDLog(@"pwd:%s",getenv("PWD"));
-			if ([resname isEqualToString:@"DVTSourceTextView"]) {
-				[self processTextViewFormat:(NSTextView *)responder];
-			}
+            if ([self isResnameSourceTextView:resname]) {
+                [self processTextViewFormat:(NSTextView *)responder];
+            }
             
 			if ([resname isEqualToString:@"IDENavigatorOutlineView"]) {
 				[self processFileFormat:(NSOutlineView *)responder];
@@ -720,6 +720,17 @@ typedef enum CopyDirection {
 		id item = [ov itemAtRow:idx];
 		[self processNavigableItem:item];
 	}
+}
+
+- (bool)isResnameSourceTextView:(NSString *)resname
+{
+    if ([resname isEqualToString:@"DVTSourceTextView"]) {
+        return YES;
+    }
+    if ([resname isEqualToString:@"IDEPlaygroundTextView"]) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - dealloc
