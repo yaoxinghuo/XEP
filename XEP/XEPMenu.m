@@ -132,7 +132,11 @@ typedef enum CopyDirection {
 		range = [ls rangeOfLineNumber:cline];
 		range.length++;
 	}
-    
+    // 这里是我加的2014-10-26 09:38
+    // 之前有个问题，如果是最后一行的话，貌似DeleteLine删不掉，测试下这样就可以了
+    if (/**cline >= ls.lineCount-1 && **/range.location + range.length >= ls.targetStr.length) {
+        range.location--;
+    }
 	[tv insertText:@"" replacementRange:range];
 }
 
