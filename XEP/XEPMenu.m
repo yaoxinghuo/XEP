@@ -136,8 +136,14 @@ typedef enum CopyDirection {
     // 之前有个问题，如果是最后一行的话，貌似DeleteLine删不掉，测试下这样就可以了
     if (/**cline >= ls.lineCount-1 && **/range.location + range.length >= ls.targetStr.length) {
         range.location--;
+        if ([[ls stringOfLineNumber:cline] length] > 1) {
+            [tv insertText:@"" replacementRange:range];
+        }else{
+            [tv insertText:@"\n" replacementRange:range];
+        }
+    } else {
+        [tv insertText:@"" replacementRange:range];
     }
-	[tv insertText:@"" replacementRange:range];
 }
 
 #pragma mark - Copy line
